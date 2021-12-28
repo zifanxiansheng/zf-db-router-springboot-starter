@@ -1,0 +1,30 @@
+/Lottery.iml
+/lottery-application/lottery-application.iml
+/lottery-common/lottery-common.iml
+/lottery-domain/lottery-domain.iml
+/lottery-infrastructure/lottery-infrastructure.iml
+/lottery-interfaces/lottery-interfaces.iml
+/lottery-rpc/lottery-rpc.iml
+
+# Java class files
+*.class
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+.DS_Store/
+/target
+
+/target
+/target/
+**/target/
+
+.DS_Store

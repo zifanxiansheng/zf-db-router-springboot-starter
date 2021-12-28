@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=top.zifanxiansheng.middleware.db.router.config.DataBaseAutoConfig
