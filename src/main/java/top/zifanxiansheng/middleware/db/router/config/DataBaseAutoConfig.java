@@ -1,6 +1,7 @@
 package top.zifanxiansheng.middleware.db.router.config;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.ibatis.plugin.Interceptor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +12,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.support.TransactionTemplate;
 import top.zifanxiansheng.middleware.db.router.DBRouterJoinPoint;
 import top.zifanxiansheng.middleware.db.router.dynamic.DynamicDataSource;
+import top.zifanxiansheng.middleware.db.router.dynamic.DynamicMybatisPlugin;
 import top.zifanxiansheng.middleware.db.router.model.DBProperties;
 import top.zifanxiansheng.middleware.db.router.model.ZFDataBaseConfig;
 import top.zifanxiansheng.middleware.db.router.strategy.DefaultDBStrategyImpl;
@@ -38,6 +40,11 @@ public class DataBaseAutoConfig implements EnvironmentAware, Constants {
     public ZFDataBaseConfig zfDataBaseConfig() {
 
         return zfDataBaseConfig;
+    }
+
+    @Bean
+    public Interceptor plugin() {
+        return new DynamicMybatisPlugin();
     }
 
     @Bean
